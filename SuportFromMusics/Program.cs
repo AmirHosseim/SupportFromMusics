@@ -16,7 +16,6 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 #region AddScopeds
 builder.Services.AddScoped<ISendEmail, SendPasswordWithEmail>();
-builder.Services.AddScoped<ILogin, Login>();
 builder.Services.AddScoped<IAddUser, AddUser>();
 builder.Services.AddScoped<IGetSings, GetSings>();
 builder.Services.AddScoped<IGetSingers, GetSingers>();
@@ -26,7 +25,7 @@ builder.Services.AddScoped<IGetUsers, GetUsers>();
 #region Use SqlServer
 builder.Services.AddDbContext<SuportContext>(options =>
 {
-    options.UseSqlServer("Data Source =.; Initial Catalog = SuportFromMusics_DB; Integrated Security = true");
+    options.UseSqlServer("Data Source =.; Initial Catalog = Support_DB; Integrated Security = true");
 });
 #endregion
 

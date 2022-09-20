@@ -32,7 +32,7 @@ namespace SingServices
 
         public List<SongVersies> Versies { get; set; }
 
-        public List<SingLike> Likes { get; set; }
+        public List<theSingsLike> theSingsLike { get; set; }
 
         public List<SaveSing> Saves { get; set; }
 

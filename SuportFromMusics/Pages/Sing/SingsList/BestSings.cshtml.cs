@@ -24,8 +24,8 @@ namespace SuportFromMusics.Pages.Sing.SingsList
         public void OnGet(int pageid = 1)
         {
             List<SingDetail> sings = _context.singDetail.Include(s => s.singer).Include(s=> s.singType)
-                .Include(s => s.Likes).ToList();
-            sings.OrderByDescending(s => s.Likes.Count()).TakeLast(50);
+                .Include(s => s.theSingsLike).ToList();
+            sings.OrderByDescending(s => s.theSingsLike.Count()).TakeLast(50);
 
             showSings = _getSings.getSings(pageid,sings.ToList());
 

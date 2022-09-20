@@ -19,7 +19,7 @@ namespace SuportFromMusics.Pages.Sing
 
         public IActionResult OnGet(long SingDetailId)
         {
-            var sing = _context.singDetail.Include(s=> s.Likes).SingleOrDefault(s => s.Id == SingDetailId);
+            var sing = _context.singDetail.Include(s=> s.theSingsLike).SingleOrDefault(s => s.Id == SingDetailId);
 
             if(sing == null)
             {
@@ -28,22 +28,22 @@ namespace SuportFromMusics.Pages.Sing
 
             int UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            var Like = _context.SingLike.SingleOrDefault(l => l.UserId == UserId && l.SingDetailId == sing.Id);
+            var Like = _context.Like.SingleOrDefault(l => l.UserId == UserId && l.SingDetailId == sing.Id);
 
             if(Like != null)
             {
-                _context.SingLike.Remove(Like);
+                _context.Like.Remove(Like);
             }
             else
             {
-                Like = new SingLike()
+                Like = new theSingsLike()
                 {
                     SingDetailId = sing.Id,
                     UserId = UserId,
                     SingDetail = sing,
                 };
 
-                _context.SingLike.Add(Like);
+                _context.Like.Add(Like);
             }
 
             _context.SaveChanges();

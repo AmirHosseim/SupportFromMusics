@@ -12,10 +12,8 @@ namespace SuportFromMusics.Pages.Account
     public class LoginModel : PageModel
     {
         private SuportContext _context;
-        private ILogin _login;
-        public LoginModel(SuportContext context,ILogin login)
+        public LoginModel(SuportContext context)
         {
-            _login = login;
             _context = context;
         }
 
@@ -38,9 +36,7 @@ namespace SuportFromMusics.Pages.Account
                 return Page();
             }
 
-            string password = _login.Password(loginvm.Password);
-
-            var user = _context.user.FirstOrDefault(u=> u.Email == loginvm.Email && u.Password == password);
+            var user = _context.user.FirstOrDefault(u=> u.Email == loginvm.Email && u.Password == loginvm.Password);
 
             if(user == null)
             {

@@ -39,6 +39,16 @@
             </div>
         }
     </div>
+
+    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12" id="card-saves">
+        <p class="h3 text-info">
+            شما می توانید تمام موسیقی های ذخیره شده تان را گوش دهید
+        </p>
+        <a asp-page="Saves" class="btn btn-info">
+            موسیقی های ذخیره شده
+        </a>
+    </div>
+
     @if (Model.singer != null)
     {
         <img src="~/SingerAvatar/@(Model.singer.title + Model.singer.Id).jpg" width="100px" height="100px"/>

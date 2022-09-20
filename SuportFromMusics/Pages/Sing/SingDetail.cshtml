@@ -65,41 +65,38 @@
                         @if (Model.Like == null)
                         {
                             <div>
-
-
-                                <a style="display: inline-block;" class="btn btn-success" asp-page="Like" asp-route-SingDetailId="@Model.sing.Id">
-                                    <p>لایک کنید @Model.sing.Likes.Count()</p>
+                                <a style="display: inline-block;" asp-page="Like" asp-route-SingDetailId="@Model.sing.Id">
+                                    <img src="~/Icons/icons8-heart-96.png" width="50px" height="50px" />
                                 </a>
                             </div>
                         }
                         else
                         {
                             <div>
-
-                                <a style="display: inline-block;" class="btn btn-secondary" asp-page="Like" asp-route-SingDetailId="@Model.sing.Id">
-                                    <p> پس گرفتن لایک @Model.sing.Likes.Count() </p>
+                                <a style="display: inline-block;" asp-page="Like" asp-route-SingDetailId="@Model.sing.Id">
+                                    <img src="~/Icons/icons8-heart-64.png" width="50px" height="50px" />
                                 </a>
                             </div>
                         }
                     </td>
                     <td>
                         <div>
-                            <a asp-page="coments/AllComents" asp-route-SingDetailId="@Model.sing.Id" class="btn btn-success">
-                                نظرات
-                                </a>
+                            <a asp-page="coments/AllComents" asp-route-SingDetailId="@Model.sing.Id">
+                                <img src="~/Icons/icons8-comments-50.png" width="50px" height="50px" />
+                            </a>
                         </div>
                     </td>
                     <td>
                         @if (Model.SingSave == null)
                         {
-                            <a class="btn btn-success" asp-page="Saving" asp-route-SingDetailId="@Model.sing.Id">
-                                ذخیره ترک
+                            <a asp-page="Saving" asp-route-SingDetailId="@Model.sing.Id">
+                                <img src="~/Icons/icons8-save-64.png" width="50px" height="50px" />
                             </a>
                         }
                         else if (Model.SingSave != null)
                         {
-                            <a class="btn btn-secondary" asp-page="Saving" asp-route-SingDetailId="@Model.sing.Id">
-                                برداشتن ذخیره
+                            <a asp-page="Saving" asp-route-SingDetailId="@Model.sing.Id">
+                                <img src="~/Icons/icons8-save-64(1).png" width="50px" height="50px" />
                             </a>
                         }
                     </td>
@@ -116,8 +113,8 @@
         <pre align="center">
         <p style="font-family:Tahoma;font-size: 1rem">
                 @item.Text
-                                                                                        </p>
-                                                                                        </pre>
+                </p>
+            </pre>
     }
     <div align="center">
         <audio src="~/Audios/@(Model.sing.Name + Model.sing.SingerId + Model.sing.Id).mp3" controls></audio>

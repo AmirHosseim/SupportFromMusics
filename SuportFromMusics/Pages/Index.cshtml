@@ -8,23 +8,44 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
-<body>
-    <h1>Home page</h1>
-    @foreach (var item in Model.SingDetails)
-    {
-        <div dir="rtl" class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="Content">
-            <div class="card" id="MusicCard">
-                <h5 class="card-header" id="CardHeader">@item.Name</h5>
-                <div class="card-body">
-                    <a href="#" class="btn btn-primary">
-                        <img src="~/MusicAvatars/@(item.Name+item.SingerId+item.Id).jpg" width="40px" height:"40px" />
-                    </a>
-                    <h5 class="card-title">@item.singer.FirstName</h5>
-                    <h5>@item.singType.Name</h5>
-                    <p id="LikeQuantity"></p>
-                    <a asp-page="/sing/SingDetail" asp-route-Id="@item.Id">مشخصات ترک</a>
-                </div>
+<body align="center">
+    <div class="col-xl-8 col-md-8 col-sm-11" style="margin: 0 auto;">
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill" /></svg>
+            <div>
+                این وب سایت کاملا نمایشی است و هیچ کدوم از خوانندگان خودشان نیستند
             </div>
         </div>
-    }
+        <br />
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>همایت </strong> همایت از موسیقی های منتشر شده از هنر موسیقی همایت کنید 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <br />
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">لیست تمامی سبک ها</h4>
+            <p>شما می توانید در این قسمت تمامی سبک هایی که در آن سبک موسیقی منتشر کرده اند را ببینید</p>
+            <hr>
+            <a asp-page="sing/SingsList/Singtypes">
+                سبک ها
+            </a>
+        </div>
+        <br />
+        <div class="card" style="width: 18rem; display:inline-block;margin: 3cm;">
+            <img src="~/SiteIMGs/Sing.jpg" class="card-img-top" alt="موسیقی">
+            <div class="card-body">
+                <h5 class="card-title">بهترین ترک ها</h5>
+                <p class="card-text">شما می توانید بهترین ترک ها را بر اساس تعداد لایک پیدا کنید</p>
+                <a class="btn btn-primary" asp-page="Sing/SingsList/BestSings">بهترین ترک ها</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; display:inline-block;">
+            <img src="~/SiteIMGs/Singers.jpg" class="card-img-top" alt="خواننده ها">
+            <div class="card-body">
+                <h5 class="card-title">بهترین ها</h5>
+                <p class="card-text">شما می توانید بهترین خواننده ها را بر اساس تعداد طرفدار پیدا کنید و با موسیقی های آنها نیز آشنا شوید</p>
+                <a class="btn btn-primary" asp-page="Sing/singer/SingersList">بهترین ها</a>
+            </div>
+        </div>
+    </div>
 </body>

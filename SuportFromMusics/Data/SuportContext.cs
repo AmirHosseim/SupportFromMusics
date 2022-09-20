@@ -29,7 +29,7 @@ namespace SuportFromMusics.Data
 
         public DbSet<SuportedUsers> SuportedUsers { get; set; }
 
-        public DbSet<SingLike> SingLike { get;set; }
+        public DbSet<theSingsLike> Like { get;set; }
 
         public DbSet<SaveSing> SaveSing { get; set; }
 
@@ -38,9 +38,11 @@ namespace SuportFromMusics.Data
         {
             modelBuilder.Entity<Singer>().HasKey(k => new { k.Id });
             modelBuilder.Entity<SongVersies>().HasKey(k => new { k.Id });
+            modelBuilder.Entity<theSingsLike>().HasKey(k => new { k.SingDetailId, k.UserId });
             modelBuilder.Entity<SuportedUsers>().HasKey(k => new { k.UserId, k.SuportFormId });
             modelBuilder.Entity<SaveSing>().HasKey(k => new { k.SingDetailId, k.UserId });
             modelBuilder.Entity<Coment>().HasKey(k => new { k.Id });
+            modelBuilder.Entity<FollowSinger>().HasKey(k=> new {k.SingerId, k.UserId});
 
             base.OnModelCreating(modelBuilder);
         }

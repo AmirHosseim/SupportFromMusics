@@ -18,15 +18,6 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">@item.Email</h5>
-                    @{
-                        string pass = "";
-                        for (int i = 0; i < item.Password.Length; i++)
-                        {
-                            pass += (char)(item.Password[i] - (item.Password.Length) + i);
-                        }
-
-                        item.Password = pass;
-                    }
                     <p class="card-text">@item.Password</p>
                     @if (item.IsAdmin == true)
                     {

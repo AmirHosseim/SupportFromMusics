@@ -25,14 +25,14 @@ namespace SuportFromMusics.Pages.Sing
         //this praperty is for show the others sings of singer
         public IEnumerable<SingDetail> Singer_Other_Sings { get; set; }
         public SuportForm SuportForm { get; set; }
-        public SingLike Like { get; set; }
+        public theSingsLike Like { get; set; }
         public SaveSing SingSave { get; set; }
         public IActionResult OnGet(int Id)
         {
 
 #pragma warning disable CS8601 // Possible null reference assignment.
             sing = _context.singDetail.Include(x => x.singer)
-                .Include(s => s.singType).Include(l=> l.Likes)
+                .Include(s => s.singType).Include(l=> l.theSingsLike)
                     .SingleOrDefault(s => s.Id == Id);
 #pragma warning restore CS8601 // Possible null reference assignment.
 
@@ -53,7 +53,7 @@ namespace SuportFromMusics.Pages.Sing
             {
                 int userid = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-                Like = _context.SingLike.SingleOrDefault(l => l.SingDetailId == sing.Id && l.UserId == userid);
+                Like = _context.Like.SingleOrDefault(l => l.SingDetailId == sing.Id && l.UserId == userid);
 
                 SingSave = _context.SaveSing.SingleOrDefault(s => s.UserId == userid && s.SingDetailId == sing.Id);
             }

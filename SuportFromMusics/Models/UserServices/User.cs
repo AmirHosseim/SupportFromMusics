@@ -20,7 +20,7 @@ namespace UserServices
 
         public List<SuportedUsers> Supoertedusers { get; set; }
 
-        public List<SingLike> Likes { get; set; }
+        public List<theSingsLike> Likes { get; set; }
 
         public List<SaveSing> Saves { get; set; }
 

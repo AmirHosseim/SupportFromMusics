@@ -52,13 +52,7 @@ namespace SuportFromMusics.Pages.Account.RegisterManager
                 user.UserName = vm.UserName;
                 user.Password = vm.Password;
                 user.IsFinishedSubName = true;
-
-                for (int i = 0; i < user.Password.Length; i++)
-                {
-                    SecuritPass += (char)(user.Password[i] + (user.Password.Length) - i);
-                }
-
-                user.Password = SecuritPass;
+                user.Password = vm.Password;
 
                 _context.SaveChanges();
             }

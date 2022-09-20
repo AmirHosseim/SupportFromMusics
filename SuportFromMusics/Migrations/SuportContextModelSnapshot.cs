@@ -52,12 +52,6 @@ namespace SuportFromMusics.Migrations
 
             modelBuilder.Entity("SingServices.FollowSinger", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
-
                     b.Property<long>("SingerId")
                         .HasColumnType("bigint");
 
@@ -67,7 +61,7 @@ namespace SuportFromMusics.Migrations
                     b.Property<int>("songerId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("SingerId", "UserId");
 
                     b.HasIndex("UserId");
 
@@ -184,32 +178,6 @@ namespace SuportFromMusics.Migrations
                     b.ToTable("singer");
                 });
 
-            modelBuilder.Entity("SingServices.SingLike", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
-
-                    b.Property<long>("SingDetailId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("SingDetailId1")
-                        .HasColumnType("int");
-
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SingDetailId1");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("SingLike");
-                });
-
             modelBuilder.Entity("SingServices.SingType", b =>
                 {
                     b.Property<int>("Id")
@@ -265,6 +233,29 @@ namespace SuportFromMusics.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SuportForm");
+                });
+
+            modelBuilder.Entity("SingServices.theSingsLike", b =>
+                {
+                    b.Property<long>("SingDetailId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("LikeDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("SingDetailId1")
+                        .HasColumnType("int");
+
+                    b.HasKey("SingDetailId", "UserId");
+
+                    b.HasIndex("SingDetailId1");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Like");
                 });
 
             modelBuilder.Entity("SuportFromMusics.Models.SingServices.SongVersies", b =>
@@ -405,25 +396,6 @@ namespace SuportFromMusics.Migrations
                     b.Navigation("singer");
                 });
 
-            modelBuilder.Entity("SingServices.SingLike", b =>
-                {
-                    b.HasOne("SingServices.SingDetail", "SingDetail")
-                        .WithMany("Likes")
-                        .HasForeignKey("SingDetailId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("UserServices.User", "User")
-                        .WithMany("Likes")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SingDetail");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("SingServices.SuportedUsers", b =>
                 {
                     b.HasOne("SingServices.SuportForm", "SuportForm")
@@ -439,6 +411,25 @@ namespace SuportFromMusics.Migrations
                         .IsRequired();
 
                     b.Navigation("SuportForm");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SingServices.theSingsLike", b =>
+                {
+                    b.HasOne("SingServices.SingDetail", "SingDetail")
+                        .WithMany("theSingsLike")
+                        .HasForeignKey("SingDetailId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UserServices.User", "User")
+                        .WithMany("Likes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SingDetail");
 
                     b.Navigation("User");
                 });
@@ -461,11 +452,11 @@ namespace SuportFromMusics.Migrations
 
             modelBuilder.Entity("SingServices.SingDetail", b =>
                 {
-                    b.Navigation("Likes");
-
                     b.Navigation("Saves");
 
                     b.Navigation("Versies");
+
+                    b.Navigation("theSingsLike");
                 });
 
             modelBuilder.Entity("SingServices.Singer", b =>
