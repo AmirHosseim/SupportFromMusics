@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/Home.css" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <h1>Home page</h1>
+    @foreach (var item in Model.SingDetails)
+    {
+        <div dir="rtl" class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="Content">
+            <div class="card" id="MusicCard">
+                <h5 class="card-header" id="CardHeader">@item.Name</h5>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">
+                        <img src="~/MusicAvatars/@(item.Name+item.SingerId+item.Id).jpg" width="40px" height:"40px" />
+                    </a>
+                    <h5 class="card-title">@item.singer.FirstName</h5>
+                    <h5>@item.singType.Name</h5>
+                    <p id="LikeQuantity"></p>
+                    <a asp-page="/sing/SingDetail" asp-route-Id="@item.Id">مشخصات ترک</a>
+                </div>
+            </div>
+        </div>
+    }
+</body>

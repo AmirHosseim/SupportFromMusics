@@ -1,0 +1,164 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.SingerAccountDetailModel
+@{
+    int i = 1;
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    @if (@Model.singer == null)
+    {
+        <div align="center" with="100%" class="col-md-12 col-sm-12">
+            <h1 style="color:red;">@ViewBag.errorMessage</h1>
+        </div>
+    }
+    else
+    {
+        @* <table class="table table-success table-striped col-md-9 col-sm-11 col-xs-11">
+    <tr>
+    <td>
+    نام
+    </td>
+    <td>
+    @Model.singer.FirstName
+    </td>
+    </tr>
+    <tr>
+    <td>
+    نام خانوادگی
+    </td>
+    <td>
+    @Model.singer.LastName
+    </td>
+    </tr>
+    <tr>
+    <td>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    تعداد ترک
+    </td>
+    <td>
+    @Model.Sings.Count()
+    </td>
+    </tr>
+    </table>*@
+        <div id="SingerAccount-card">
+            <h2>@Model.singer.title</h2>
+            @foreach (var item in Model.SingTypes)
+            {
+                <p>@item.Name,</p>
+            }
+        </div>
+
+
+        @if (Model.Follow == null)
+        {
+            <table>
+                <tr>
+                    <td>
+                        <a href="/Sing/Singer/FollowOrUnFollow?SingerId=@Model.singer.Id" class="btn btn-success">
+                            دنبال کردن
+                        </a>
+                    </td>
+                    <td>
+                        تعداد دنبال کننده: @Model.singer.Followers.Count()
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <table>
+                <tr>
+                    <td>
+                        <a href="/Sing/Singer/FollowOrUnFollow?SingerId=@Model.singer.Id" class="btn btn-secondary">
+                            لغو دنبال کردن
+                        </a>
+                    </td>
+                    <td>
+                        تعداد دنبال کننده: @Model.singer.Followers.Count()
+                    </td>
+                </tr>
+            </table>
+
+        }
+        <div style="margin: 3cm;">
+
+            @if (Model.singer.ShortLink == "")
+            {
+                <a class="btn btn-primary" asp-page="MakeShortLink" asp-route-SingerId="@Model.singer.Id">
+                    ساخت لینک کوتاه برای پروفایل
+                </a>
+            }
+            لینک کوتاه:
+            <a href="/S?Key=@(Model.singer.ShortLink)">
+                <p>https://localhost:7246/S?Key=@Model.singer.ShortLink</p>
+            </a>
+        </div>
+        <br />
+        <h3>لیست ترک ها</h3>
+        @if (@Model.Sings != null)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>نام ترک</th>
+                        <th>زمان انتشار</th>
+                        <th>سبک</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Sings)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td>@item.Name</td>
+                            <td>@item.SharedTime</td>
+                            <td>@item.singType.Name</td>
+                            <td>
+                                <a asp-page="SingDetail" asp-route-Id="@item.Id">
+                                    مشخصات ترک
+                                </a>
+                            </td>
+                        </tr>
+                        @(i++)
+                    }
+                </tbody>
+            </table>
+        }
+        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10" style="margin: 2rem">
+            @foreach (var item in @Model.Sings.Skip(Model.Sings.Count() - 4).Take(4))
+            {
+                <div id="sings-card" class="col-lg-3 col-md-3 col-xs-5 col-sm-5" style="display: inline-block;margin: 3rem;">
+                    <img src="~/MusicAvatars/@(item.Name+item.SingerId+item.Id).jpg" width="60px" height="60px" />
+                    <hr />
+                    <table width="100%">
+                        <tr>
+                            <td class="h3">
+                                @item.Name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="h4">
+                                @item.singType.Name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="h6">
+                                <b>زمان انتشار:</b> @item.SharedTime
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <a class="btn btn-warning" asp-page="/Sing/SingDetail" asp-route-Id="@(item.Id)">
+                        مشخصات ترک
+                    </a>
+                </div>
+            }
+        </div>
+    }
+</body>

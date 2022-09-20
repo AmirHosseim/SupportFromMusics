@@ -1,0 +1,68 @@
+﻿@page
+@model AddSingerAccountModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    @if (@Model.songer != null)
+    {
+        <h1 class="text-danger">شما از قبل حساب خوانندگی فعال دارید</h1>
+        <a class="btn btn-info" href="/Account/MyProfile">
+            مشاهده حساب کاربری
+        </a>
+    }
+    else
+    {
+        <h1>
+            ثبت حساب خوانندگی
+        </h1>
+        <div class="col-md-6 col-sm-12">
+            <form method="post" id="Form" enctype="multipart/form-data">
+                <div class="col-12">
+                    <label>نام</label>
+                    <input type="text" asp-for="@Model._addSingervm.FirstName" id="email" class="form-control" />
+
+                </div>
+                <div class="col-12">
+                    <lable class="form-check-label">نام خانوادگی</lable>
+                    <input type="text" asp-for="@Model._addSingervm.LastName" class="form-control" />
+
+                </div>
+                <div class="col-12">
+                    <lable class="form-check-label">آواتار</lable>
+                    <input type="file" asp-for="@Model._addSingervm.SingerAvatar"
+                       class="form-control" />
+                </div>
+                <div>
+                    <div class="col-9" id="DivTitle" style="display: inline-block">
+                        <lable class="form-check-label">لقب</lable>
+                        <input type="text" asp-for="@Model._addSingervm.Title" class="form-control" id="txtTitle" />
+                        <p class="text-danger h5">به یاد داشته باشید که شما در سطح وب سایت با این نام شناخته می شوید</p>
+                    </div>
+                    <div style="display: inline-block" class="col-3">
+                        <a onclick="return checkBox()" id="btnChangeTitle" class="btn btn-warning">استفاده از نام و نام خوانوادگی</a>
+                    </div>
+                </div>
+
+                <input type="hidden" id="IsUseFullNameAsTitle" asp-for="@Model._addSingervm.IsUseFullNameForTitle" />
+
+                @foreach (var item in Model.gender)
+                {
+                    <input type="radio" value="@item.gender" name="SelectGender" />
+
+                    @item.gender
+                }
+                <h5 class="text-danger">
+                    @ViewBag.errorMessage
+                </h5>
+
+                <div>
+                    <button type="submit" onclick="return checkform()">ثبت حساب خوانندگی</button>
+                </div>
+            </form>
+        </div>
+    }
+</body>
+<script src="~/js/Song/AddSingerAccount1.js"></script>

@@ -1,0 +1,51 @@
+﻿@page
+@model SuportFromMusics.Pages.Account.LoginModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="col-md-6 col-sm-12">
+        <form method="post" id="Form">
+            <div class="col-12">
+                <label>ایمیل</label>
+                <input type="text" asp-for="@Model.loginvm.Email" id="email" class="form-control" />
+            </div>
+            <div class="col-12">
+                <input type="password" asp-for="@Model.loginvm.Password" id="password" class="form-control" />
+            </div>
+            <div>
+                <button type="submit" onclick="return checkform()">ورود</button>
+            </div>
+            <div class="form-group">
+                <lable class="form-check-label">
+                    <input class="form-check-input" asp-for="@Model.loginvm.RememberMe" style="margin-right=" 4px" />
+                    <label asp-for="@Model.loginvm.RememberMe" style="margin-left:4px"></label>
+                </lable>
+            </div>
+            <h3 id="txtError" class="txt-danger">
+                @ViewBag.ErrorMessage
+            </h3>
+        </form>
+    </div>
+</body>
+<script>
+    var txtEmail = document.getElementById("email");
+    var txtPassword = document.getElementById("password");
+    var txtError = document.getElementById("txtError");
+
+    function checkform() {
+        txtError.style.color = "red";
+        if (txtEmail.value == "") {
+            txtError.innerHTML = "لطفا ایمیل را وارد کنید";
+            return false;
+        }
+        else if (txtPassword.value == "") {
+            txtError.innerHTML = "لطفا رمز عبور را وارد نمایید";
+            return false;
+        }
+    }
+</script>
+

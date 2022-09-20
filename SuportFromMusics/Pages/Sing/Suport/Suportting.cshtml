@@ -1,0 +1,44 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.Suport.SuporttingModel
+@{
+}
+<head>
+
+</head>
+<body>
+    @if (Model.SuportForm != null)
+    {
+        <div align="center">
+            <form method="post">
+                <input value="@Model.SuportForm.Id" asp-for="@Model.SuportForm.Id" type="hidden" />
+                <input value="@Model.SuportForm.Suportedvalue" asp-for="@Model.SuportForm.Suportedvalue" type="hidden" />
+                <input value="@Model.SuportForm.SuportValue" asp-for="@Model.SuportForm.SuportValue" type="hidden"/>
+                <div>
+                    <label>لطفا مبلغ همات را وارد کنید</label>
+                    <input type="number" class="form-control" asp-for="@Model._suporttingVm.SuportValue" />
+                    @{
+                        decimal MaxValid = @Model.SuportForm.SuportValue - @Model.SuportForm.Suportedvalue;
+                    }
+                    <label class="h6 text-danger">نهایت می توانید تا @MaxValid همایت کنید</label>
+                </div>
+                <input type="submit" id="btn-submit" class="btn btn-success" value="همایت" />
+            </form>
+            <h3>
+                @ViewBag.ErrorMessage
+            </h3>
+        </div>
+        <div id="pry-card" align="center">
+            <h3 class="text-danger">این فرم بانکی کاملا نمایشی است و پر  کردن آن مفهومی ندارد</h3>
+            <div class="col-md-6">
+                <label>شماره کارت</label>
+                <input class="form-control" />
+                <label>تاریخ انقضا</label>
+                <input class="form-control" type="date" />
+                <label>
+                    رمز پویا یا رمز دوم
+                </label>
+                <input type="number" class="form-control" />
+            </div>
+        </div>
+    }
+</body>

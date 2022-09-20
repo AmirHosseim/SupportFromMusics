@@ -1,0 +1,30 @@
+﻿body {
+}
+#card-info{
+    margin: 3cm;
+    border-radius: 2rem;
+    background-color:#dddddd;
+}
+
+#lbl-Username{
+    color: black;
+    font-size: 25px;
+    padding: 2rem;
+}
+#lbl-Email{
+    color: black;
+    opacity: 0.8;
+    font-size: 20px;
+    padding: 2rem;
+}
+#card-Pn{
+    padding:2rem;
+}
+#card-singer-profile {
+    margin: 3cm;
+    border-radius: 1rem;
+    background-color: #dddddd;
+}
+#card-singer-profile lable, #card-singer-profile a{
+    padding: 2rem;
+}

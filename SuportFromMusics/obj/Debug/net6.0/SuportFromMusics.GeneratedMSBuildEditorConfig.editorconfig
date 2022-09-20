@@ -1,0 +1,204 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SuportFromMusics
+build_property.RootNamespace = SuportFromMusics
+build_property.ProjectDir = D:\Programing\Projects\SuportFromMusics\SuportFromMusics\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Programing\Projects\SuportFromMusics\SuportFromMusics
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/EditSingerAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxFZGl0U2luZ2VyQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dJbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/MakeShortLink.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxNYWtlU2hvcnRMaW5rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/MyProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxNeVByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/RegisterManager/CheckPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWdpc3Rlck1hbmFnZXJcQ2hlY2tQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/RegisterManager/EnterEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWdpc3Rlck1hbmFnZXJcRW50ZXJFbWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/RegisterManager/SubmitName.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWdpc3Rlck1hbmFnZXJcU3VibWl0TmFtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Account/Saves.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTYXZlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/AdminPanel/ChangeActivityType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxDaGFuZ2VBY3Rpdml0eVR5cGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/AdminPanel/DeletSinger.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxEZWxldFNpbmdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/AdminPanel/DeletUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxEZWxldFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/AdminPanel/SendEmailForUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxTZW5kRW1haWxGb3JVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/AdminPanel/SingersManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxTaW5nZXJzTWFuYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/AdminPanel/Usersmanager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc21hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/S.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Shared/_SingsListNavBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TaW5nc0xpc3ROYXZCYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Shared/_SuportLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TdXBvcnRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/AddSing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xBZGRTaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/AddVersText.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xBZGRWZXJzVGV4dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/coments/Allcoments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xjb21lbnRzXEFsbGNvbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/DeletSing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xEZWxldFNpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/DeletVers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xEZWxldFZlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/EditSing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xFZGl0U2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/Like.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xMaWtlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/Saving.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTYXZpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/SingDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTaW5nRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/SingerAccountDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTaW5nZXJBY2NvdW50RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/singer/AddSingerAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xzaW5nZXJcQWRkU2luZ2VyQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/singer/FollowOrUnFollow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xzaW5nZXJcRm9sbG93T3JVbkZvbGxvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/singer/SingersList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xzaW5nZXJcU2luZ2Vyc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/SingsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTaW5nc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/SingsList/BestSings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTaW5nc0xpc3RcQmVzdFNpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/SingsList/SingsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTaW5nc0xpc3RcU2luZ3NMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/SingsList/Singtypes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTaW5nc0xpc3RcU2luZ3R5cGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/Suport/AddSuportForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTdXBvcnRcQWRkU3Vwb3J0Rm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/Suport/EditSuportForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTdXBvcnRcRWRpdFN1cG9ydEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/Suport/SuportFormInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTdXBvcnRcU3Vwb3J0Rm9ybUluZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Sing/Suport/Suportting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ1xTdXBvcnRcU3Vwb3J0dGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programing/Projects/SuportFromMusics/SuportFromMusics/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-k8i1rijttk

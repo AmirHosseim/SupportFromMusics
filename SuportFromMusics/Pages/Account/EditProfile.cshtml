@@ -1,0 +1,77 @@
+﻿@page
+@model SuportFromMusics.Pages.Account.EditProfileModel
+@{
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Account/SubmitName.css" />
+</head>
+<body>
+    <div align="center">
+        <div id="Bigest" align="right" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <form width="100%" name="SubNameForm" method="post">
+                <input type="hidden" value="@Model.userId" asp-for="@Model.userId" />
+                <div class="col-12">
+                    <table id="formTable">
+                        <tr>
+                            <td>نام</td>
+                            <td>نام خانوادگی</td>
+                        </tr>
+                        <tr id="NameDetail">
+                            <td>
+                                <input type="text" placeholder="نام کاربری" id="UserName"
+                                       value="@Model.editUser.UserName" asp-for="@Model.editUser.UserName" />
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="Password" class="col-12" align="center">
+                        <div class="passwordInput col-12">
+                            <lable>رمز عبور</lable>
+                            <input type="password" placeholder="رمز عبور" id="IPassword"
+                                   value="@Model.editUser.Password" asp-for="@Model.editUser.Password" />
+                        </div>
+                        <div class="passwordInput col-12">
+                            <lable>تکرار رمز عبور</lable>
+                            <input type="password" placeholder="تکرار رمز عبور" id="IRPassword" value="@Model.editUser.Password" />
+                        </div>
+                    </div>
+                </div>
+                <div id="divSubmit">
+                    <button id="btnSubmit" class="btn btn-primary" onclick="return checkForm()">
+                        ویرایش
+                    </button>
+                </div>
+                <h4 id="ErrorMessage"></h4>
+            </form>
+        </div>
+    </div>
+    <script>
+        var UserName = document.getElementById('UserName');
+        var Password = document.getElementById('IPassword');
+        var RepeatPassword = document.getElementById('IRPassword');
+        var ErrorEleman = document.getElementById('ErrorMessage');
+
+
+        function checkForm() {
+            if (UserName.value == null) {
+                ErrorEleman.innerHTML = "لطفا نام کاربری را وارد کنید";
+                return false;
+            }
+            else if (Password.value == "") {
+                ErrorEleman.innerHTML = "لطفا رمز عبور را وارد کنید";
+                return false;
+            }
+            else if (Password.length < 6) {
+                ErrorEleman.innerHTML = "رمز عبور نمی توانذ کمتر از 6 کاراکتر باشد";
+                return false;
+            }
+            else if (RepeatPassword.value == "") {
+                ErrorEleman.innerHTML = "لطفا تکرار رمز عبور را وارد کنید";
+                return false;
+            }
+            else if (Password.value != RepeatPassword.value) {
+                ErrorEleman.innerHTML = "تکرار رمز عبور صحیح نمی باشد";
+                return false;
+            }
+        }
+    </script>
+</body>

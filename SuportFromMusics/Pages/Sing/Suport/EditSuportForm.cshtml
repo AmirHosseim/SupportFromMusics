@@ -1,0 +1,48 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.Suport.EditSuportFormModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Suport/AddSuportForm.css" />
+</head>
+<body>
+    @if (Model.maxValues.Count() == 0)
+    {
+        <h3 class="text-danger" align="center">
+            شما از قبل بیشترین مقدار را برای پشتیبانی در نظر گرفتید
+        </h3>
+    }
+    else
+    {
+        <div align="center">
+            <div dir="rtl" id="Text-Card">
+                <ul>
+                    <li>
+                        هر موقع می توانید سقف همایت مالی را بیشتر کنید
+                    </li>
+                    <hr />
+                    <li>
+                        بیشترین مقدار 100 میلیون می توانید در نظر بگیرید
+                    </li>
+                </ul>
+            </div>
+            <form method="post" align="center">
+                <input value="@Model.suportForm.Id" type="hidden" asp-for="@Model.suportForm.Id" />
+                <label>لطفا سقف همایت مالی را انتخاب کنید</label>
+                <div id="Maxvalue-Card" align="center">
+                    @foreach (var item in Model.maxValues)
+                    {
+                        <input id="MaxValueCheckBox" type="radio" class="btn btn-warning"
+                       value="@item.Maxvalue" name="SelectedMaxValue" />
+
+                        @item.Maxvalue
+                    }
+                </div>
+                <br />
+                <div>
+                    <input type="submit" value="ویرایش فرم" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    }
+</body>

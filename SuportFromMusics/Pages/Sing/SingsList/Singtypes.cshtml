@@ -1,0 +1,55 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.SingsList.SingtypesModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10" style="margin: 2rem">
+        @foreach (var item in Model.SingType_SingTypes)
+        {
+            <p class="h3">
+                @item.Key.Name
+            </p>
+            @foreach (var values in item.Value.TakeLast(4))
+            {
+                <div id="sings-card" class="col-lg-3 col-md-3 col-xs-5 col-sm-5" style="display: inline-block;margin: 3rem;">
+                    <img src="~/MusicAvatars/@(values.Name+values.SingerId+values.Id).jpg" width="60px" height="60px" />
+                    <hr />
+                    <table width="100%">
+                        <tr>
+                            <td class="h3">
+                                @values.Name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="h4">
+                                @values.singType.Name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="h6">
+                                <b>زمان انتشار:</b> @values.SharedTime
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="/Sing/SingDetail?Id=@values.Id" class="btn btn-info">
+                                    مشاهده مشخصات
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+            <a asp-page="SingsList" asp-route-SingTypeId="@item.Key.Id">
+                مشاهده بیشتر
+            </a>
+        }
+    </div>
+</body>

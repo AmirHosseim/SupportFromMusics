@@ -1,0 +1,51 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.AddVersTextModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body align="center">
+    <div align="center">
+        <form method="post" class="col-lg-7 col-md-9 col-sm-10 col-xs-11" align="center">
+            <input type="hidden" asp-for="@Model.Sing.Id" value="@Model.Sing.Id" />
+            <input type="hidden" asp-for="@Model.Sing.SingerId" value="@Model.Sing.SingerId" />
+
+            <div align="center">
+                <lable>متن آهنگ</lable>
+                <h5 class="txt txt-danger">به یاد داشته باشید که بین هر مصرع فاصله بگذارید و بعد از هر بیت وارد خط بعدی شوید</h5>
+                <textarea id="txtVersText" dir="rtl" style="height: 100px" class="form-control" asp-for="@Model.AddVersVM.VersText"></textarea>
+                @*<span asp-validation-for="@Model.AddVersVM.VersText"></span>*@
+                <label>لطفا مشخص کنید که این ورس چندمین ورس از ترک شماست. توجه داشته باشید که متن شما بر اساس همین شمارهچیده خواهند شد</label>
+                <br />
+                <p class="btn btn-white" id="AddNum">اضافه کردن</p>
+                <input asp-for="@Model.AddVersVM.VersNumber" type="number" id="Versnumber" />
+                <p class="btn btn-white" id="lessnum">کم کردن</p>
+            </div>
+            <input class="btn btn-success" type="submit" value="اضافه کردن متن" />
+        </form>
+    </div>
+    <h5 align="center" id="ErrorMessage" style="color:red;">
+        @ViewBag.ErrorMessage
+    </h5>
+    <h3>متن های اضافه شده</h3>
+    @if (Model.Verses.Count() != 0)
+    {
+        @foreach (var item in Model.Verses)
+        {
+            <div align="center">
+                <p style="font-size: 20px">
+                    ورس @item.VersNumber
+                </p>
+                <pre>
+                    <p style="font-family:Tahoma">
+                @item.Text
+                    </p>
+                </pre>
+                <a asp-page="DeletVers" asp-route-VersId="@item.Id">
+                    حذف ورس
+                </a>
+            </div>
+        }
+    }
+</body>

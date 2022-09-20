@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="/css/Layout.css" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<div id="Headder">
+    <h3>به وب سایت ما خوش آمدید</h3>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" namr="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true">
+            حساب کاربری
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+            <li><a class="dropdown-item active" href="#">مشخصات شما</a></li>
+            <li><a class="dropdown-item" href="#">حمایت های شما</a></li>
+            <li><a class="dropdown-item" href="#">ذخیره شده ها</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">حساب خوانندگی</a></li>
+        </ul>
+    </div>
+    <table class="col-12">
+        <tr>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <td>
+                    <a class="btn btn-primary" style="font-size: 25px" asp-page="/Account/LogIn">
+                        ورود به حساب کاربری
+                    </a>
+                </td>
+                <td>
+                    <a style="font-size: 25px" asp-page="/Account/RegisterManager/EnterEmail">
+                        ثبت نام
+                    </a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a style="font-size: 25px" asp-page="/Account/LogOut">
+                        خروج از حساب
+                    </a>
+                </td>
+                <td>
+                    <a asp-page="/Account/MyProfile">
+                        مشاهده پروفایل
+                    </a>
+                </td>
+            }
+        </tr>
+    </table>
+</div>
+<body>
+    <div dir="rtl" id="RenderBody">
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@page
+@model SuportFromMusics.Pages.Account.EditSingerAccountModel
+@{
+}
+<head>
+
+</head>
+<body>
+    @if (Model.Singer == null)
+    {
+        <div align="center">
+            <h2 class="text-danger">
+                @ViewBag.ErrorMessage
+            </h2>
+            <a class="btn btn-link" href="/sing/singer/AddsingerAccount">
+                اضافه کردن پروفایل خوانندگی
+            </a>
+        </div>
+    }
+    <div class="col-md-6 col-sm-12" align="center">
+        <form method="post" id="Form" enctype="multipart/form-data">
+            <input type="hidden" value="@Model.Singer.Id" asp-for="@Model.Singer.Id" />
+            <input type="hidden" value="@Model.Singer.title" asp-for="@Model.Singer.title"/>
+            <div class="col-12">
+                <label>نام</label>
+                <input type="text" asp-for="@Model.editSingerAccount.FirstName" value="@Model.editSingerAccount.FirstName" class="form-control" />
+
+            </div>
+            <div class="col-12">
+                <lable class="form-check-label">نام خانوادگی</lable>
+                <input type="text" value="@Model.editSingerAccount.LastName" asp-for="@Model.editSingerAccount.LastName" class="form-control" />
+            </div>
+            <div class="col-12">
+                <lable class="form-check-label">لقب</lable>
+                <input type="text" value="@Model.editSingerAccount.Title" asp-for="@Model.editSingerAccount.Title" class="form-control" />
+            </div>
+            <div class="col-12">
+                <lable class="form-check-label">آواتار</lable>
+                <input type="file" asp-for="@Model.editSingerAccount.SingerAvatar" 
+                        class="form-control" />
+            </div>
+            <div>
+                <button type="submit" onclick="return checkform()">ویرایش</button>
+            </div>
+            <h5 class="text-danger">
+                @ViewBag.errorMessage
+            </h5>
+        </form>
+    </div>
+</body>

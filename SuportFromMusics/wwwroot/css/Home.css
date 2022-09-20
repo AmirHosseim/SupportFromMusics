@@ -1,0 +1,13 @@
+﻿#Content {
+    background-color: #D6EFED;
+    padding: 0.5rem;
+    border-radius: 5%;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+#MusicCard {
+    border-radius: 5%;
+    margin-bottom: 1.5rem;
+}

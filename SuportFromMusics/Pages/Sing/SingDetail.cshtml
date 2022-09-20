@@ -1,0 +1,158 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.SingDetailModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <table class="table table-success table-striped col-md-9 col-sm-11 col-xs-11">
+        <tr>
+            <td>
+                نام ترک
+            </td>
+            <td>
+                @Model.sing.Name
+            </td>
+        </tr>
+        <tr>
+            <td>
+                تاریخ انتشار در ایمن سایت
+            </td>
+            <td>
+                @Model.sing.SharedTime
+            </td>
+        </tr>
+        <tr>
+            <td>
+                سبک
+            </td>
+            <td>
+                @Model.sing.singType.Name
+            </td>
+        </tr>
+        <tr>
+            <td>
+                نام خواننده
+            </td>
+            <td>
+                @Model.sing.singer.title
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a asp-page="SingerAccountDetail" asp-route-Id="@Model.sing.SingerId">پروفایل خواننده</a>
+            </td>
+    </table>
+    <br />
+    <div align="center">
+        <table class="col-lg-6 col-md-6 col-sm-9 col-xs-9">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <tr>
+
+                    @if (Model.SuportForm != null)
+                    {
+
+                        <td>
+                            <a class="btn btn-primary" href="/Sing/Suport/Suportting?SuportFormId=@Model.SuportForm.Id">
+                                همایت از این ترک
+                            </a>
+                        </td>
+
+                    }
+                    <td>
+                        @if (Model.Like == null)
+                        {
+                            <div>
+
+
+                                <a style="display: inline-block;" class="btn btn-success" asp-page="Like" asp-route-SingDetailId="@Model.sing.Id">
+                                    <p>لایک کنید @Model.sing.Likes.Count()</p>
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+
+                                <a style="display: inline-block;" class="btn btn-secondary" asp-page="Like" asp-route-SingDetailId="@Model.sing.Id">
+                                    <p> پس گرفتن لایک @Model.sing.Likes.Count() </p>
+                                </a>
+                            </div>
+                        }
+                    </td>
+                    <td>
+                        <div>
+                            <a asp-page="coments/AllComents" asp-route-SingDetailId="@Model.sing.Id" class="btn btn-success">
+                                نظرات
+                                </a>
+                        </div>
+                    </td>
+                    <td>
+                        @if (Model.SingSave == null)
+                        {
+                            <a class="btn btn-success" asp-page="Saving" asp-route-SingDetailId="@Model.sing.Id">
+                                ذخیره ترک
+                            </a>
+                        }
+                        else if (Model.SingSave != null)
+                        {
+                            <a class="btn btn-secondary" asp-page="Saving" asp-route-SingDetailId="@Model.sing.Id">
+                                برداشتن ذخیره
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div align="center">
+        <!--  SingName            SingerId            singId-->
+        <img src="~/MusicAvatars/@(Model.sing.Name + Model.sing.SingerId + Model.sing.Id).jpg" width="300px" height="300px" />
+    </div>
+    @foreach (var item in Model.SongVersies)
+    {
+        <pre align="center">
+        <p style="font-family:Tahoma;font-size: 1rem">
+                @item.Text
+                                                                                        </p>
+                                                                                        </pre>
+    }
+    <div align="center">
+        <audio src="~/Audios/@(Model.sing.Name + Model.sing.SingerId + Model.sing.Id).mp3" controls></audio>
+    </div>
+    <br />
+    @if (Model.Singer_Other_Sings.Count() != 0)
+    {
+        <h3 class="alert-success">ترک های دیگر این خواننده</h3>
+        @foreach (var item in Model.Singer_Other_Sings)
+        {
+            <div id="sings-card" class="col-lg-3 col-md-3 col-xs-5 col-sm-5" style="display: inline-block;margin: 3rem;">
+                <img src="~/MusicAvatars/@(item.Name+item.SingerId+item.Id).jpg" width="60px" height="60px" />
+                <hr />
+                <table width="100%">
+                    <tr>
+                        <td class="h3">
+                            @item.Name
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="h4">
+                            @item.singType.Name
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="h6">
+                            <b>زمان انتشار:</b> @item.SharedTime
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <a class="btn btn-warning" asp-page="/SingDetail" asp-route-Id="@(item.Id)">
+                    مشخصات ترک
+                </a>
+            </div>
+        }
+    }
+</body>

@@ -1,0 +1,66 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.singer.SingersListModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Singer/SingersList.css" />
+</head>
+<body>
+    @foreach (var item in Model.showSingers.Singers)
+    {
+        <div class="col-xl-3 col-md-4 col-sm-6" id="Singer-Card">
+            <table>
+                <tr>
+                    <td width="50%">
+                        <p id="td-Title">
+                            @item.title
+                        </p>
+                        <p id="td-Gender">
+                            @item.Gender
+                        </p>
+                        <p id="td-Sing">
+                            @item.singDetails.Count() موسیقی
+                        </p>
+                        <p id="td-Followers">
+                            @item.Followers.Count() دنبال کننده
+                        </p>
+                    </td>
+                    <td id="For-Img">
+                        <a asp-page="/Sing/singerAccountDetail" asp-route-Id="@item.Id">
+                            <img src="SingerAvatar" href="~/SingerAvatar/@(item.title + item.Id).jpg" id="SingerAvatar">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        @if (Model.showSingers.CurrentPage > 1)
+        {
+            <a class="btn btn-primary" href="/Sing/Singer/SingersList?pageId=@(Model.showSingers.CurrentPage - 1)">
+                قبلی
+            </a>
+            <a class="btn btn-primary" href="/Sing/Singer/SingersList?pageId=1">
+                اولین صفحه
+            </a>
+        }
+        @for (int i = 1; i <= Model.showSingers.PageCount; i++)
+        {
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <a class="btn btn-primary @((i==Model.showSingers.CurrentPage) ? "active" : "")" 
+                href="/Sing/Singer/SingersList?pageId=@i">
+                    @i
+                </a>
+            </div>
+        }
+        @if (Model.showSingers.CurrentPage < Model.showSingers.PageCount)
+        {
+            <a class="btn btn-primary" href="/Sing/Singer/SingersList?pageId=@(Model.showSingers.CurrentPage + 1)">
+                بعدی
+            </a>
+            <a class="btn btn-primary" href="/Sing/Singer/SingersList?pageId=@Model.showSingers.PageCount">
+                آخرین صفحه
+            </a>
+        }
+    </div>
+</body>

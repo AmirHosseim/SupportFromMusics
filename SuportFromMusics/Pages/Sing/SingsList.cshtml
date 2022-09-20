@@ -1,0 +1,59 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.SingsListModel
+@{
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/Home.css" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    @foreach (var item in Model.showSingsvm.SingDetails)
+    {
+        <div dir="rtl" class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="Content">
+            <div class="card" id="MusicCard">
+                <h5 class="card-header" id="CardHeader">@item.Name</h5>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">
+                        <img src="~/MusicAvatars/@(item.Name+item.SingerId+item.Id).jpg" width="40px" height:"40px" />
+                    </a>
+                    <h5 class="card-title">@item.singer.FirstName</h5>
+                    <h5>@item.singType.Name</h5>
+                    <p id="LikeQuantity"></p>
+                    <a asp-page="SingDetail" asp-route-Id="@item.Id">
+                        مشخصات ترک
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        @if (Model.showSingsvm.CurrentPage > 1)
+        {
+            <a class="btn btn-primary" href="/Sing/SingsList?PageId=@(Model.showSingsvm.CurrentPage - 1)">
+                قبلی
+            </a>
+            <a class="btn btn-primary" href="/Sing/SingsList?PageId=1">
+                اولین صفحه
+            </a>
+        }
+        @for (int i = 1; i <= Model.showSingsvm.PageCount; i++)
+        {
+
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <a class="btn btn-primary @((i==Model.showSingsvm.CurrentPage) ? "active" : "")" href="/Sing/SingsList?PageId=@i">
+                    @i
+                </a>
+            </div>
+        }
+        @if (Model.showSingsvm.CurrentPage < Model.showSingsvm.PageCount)
+        {
+            <a class="btn btn-primary" href="/Sing/SingsList?PageId=@(Model.showSingsvm.CurrentPage + 1)">
+                بعدی
+            </a>
+            <a class="btn btn-primary" href="/Sing/SingsList?PageId=@Model.showSingsvm.PageCount">
+                آخرین صفحه
+            </a>
+        }
+    </div>
+</body>

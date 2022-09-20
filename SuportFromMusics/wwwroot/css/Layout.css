@@ -1,0 +1,21 @@
+﻿@font-face {
+    font-family: 'Vazir';
+    src: url('Fonts/vazir-font-v16.1.0/Vazir-Medium') format('woff2'), 
+        url('Fonts/vazir-font-v16.1.0/Vazir-Medium') format('woff'), 
+        url('Fonts/vazir-font-v16.1.0/Vazir-Medium') format('truetype');
+}
+
+#Headder {
+    background-color: #EEEEEE;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 3px 3px 20px #1C658C;
+    width: 100%;
+    font-family: Vazir;
+    
+    margin-bottom: 0.5cm;
+}
+
+#RenderBody{
+    font-family: Vazir;
+}

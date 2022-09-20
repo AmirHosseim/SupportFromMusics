@@ -1,0 +1,27 @@
+﻿@page
+@model SuportFromMusics.Pages.AdminPanel.SendEmailForUsersModel
+@{
+}
+<head>
+
+</head>
+<body>
+    <form method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" asp-for="@Model.sendEmail.Email" />
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" asp-for="@Model.sendEmail.Message"></textarea>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">ارسال ایمیل</button>
+        </div>
+        <div>
+            <h3 class="text-danger">
+                @ViewBag.ErrorMessage
+            </h3>
+        </div>
+    </form>
+</body>

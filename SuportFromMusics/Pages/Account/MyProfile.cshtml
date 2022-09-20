@@ -1,0 +1,184 @@
+﻿@page
+@model SuportFromMusics.Pages.Account.MyProfileModel
+@{
+    int i = 1;
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/Account/Profile.css" />
+</head>
+<body align="center">
+    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12" id="card-info">
+        <lable id="lbl-Username">
+            @Model.user.UserName
+        </lable>
+        <br />
+        <lable id="lbl-Email">
+            @Model.user.Email
+        </lable>
+        @if (Model.user.PhonNumber == 0)
+        {
+            //div for User PhoneNumber && Pn : PhoneNumber
+            <div id="card-Pn">
+                <p class="h5">
+                    شما می توانید هر زمان که خواستید اطلاعات خود را ویرایش دهید
+                </p>
+                <a class="btn btn-primary" asp-page="EditProfile">
+                    ویرایش اطلاعات
+                </a>
+            </div>
+        }
+        else
+        {
+            //div for User PhoneNumber && Pn : PhoneNumber
+            <div id="card-Pn">
+                <p class="h3">
+                    @Model.user.PhonNumber
+                </p>
+            </div>
+        }
+    </div>
+    @if (Model.singer != null)
+    {
+        <img src="~/SingerAvatar/@(Model.singer.title + Model.singer.Id).jpg" width="100px" height="100px"/>
+        <div style="margin: 3cm;">
+
+            @if (Model.singer.ShortLink == "")
+            {
+                <a class="btn btn-primary" asp-page="MakeShortLink" asp-route-SingerId="@Model.singer.Id">
+                    ساخت لینک کوتاه برای پروفایل
+                </a>
+            }
+            لینک کوتاه:
+            <a href="/S?Key=@(Model.singer.ShortLink)">
+                <p>https://localhost:7246/S?Key=@Model.singer.ShortLink</p>
+            </a>
+        </div>
+        <div id="card-singer-profile" class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+            <lable class="h2" id="lbl-LastName">
+                @Model.singer.title
+            </lable>
+            <br />
+            <lable class="h3" id="lbl-FirstName">
+                @Model.singer.FirstName
+            </lable>
+            <br />
+            <lable class="h3" id="lbl-LastName">
+                @Model.singer.LastName
+            </lable>
+            <br />
+            <lable id="lbl-gender" class="h5">
+                جنسیت : @Model.singer.Gender
+            </lable>
+            <br />
+            <a asp-page="EditSingerAccount" class="btn btn-primary">
+                ویرایش حساب خوانندگی
+            </a>
+        </div>
+        <div class="container">
+            <a asp-page="/Sing/AddSing" class="btn btn-success">
+                اضافه کردن ترک
+            </a>
+        </div>
+        <table class="col-lg-8 col-md-8 col-sm-10 col-xs-10" align="center">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>نام ترک</th>
+                    <th>زمان انتشار</th>
+                    <th>سبک</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.singer.singDetails)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.Name</td>
+                        <td>@item.SharedTime</td>
+                        <td>@item.singType.Name</td>
+                        <td>
+                            <a asp-page="/Sing/SingDetail" asp-route-Id="@item.Id">
+                                مشخصات ترک
+                            </a>
+                        </td>
+                    </tr>
+                }
+                @(i++)
+            </tbody>
+        </table>
+        <br />
+        <div class="col-lg-9 col-md-9 col-sm-10 col-xs-10" style="margin: 2rem">
+            @foreach (var item in Model.singer.singDetails)
+            {
+                <div id="sings-card" class="col-lg-3 col-md-3 col-xs-5 col-sm-5" style="display: inline-block;margin: 3rem;">
+                    <img src="~/MusicAvatars/@(item.Name+item.SingerId+item.Id).jpg" width="60px" height="60px" />
+                    <hr />
+                    <table width="100%">
+                        <tr>
+                            <td class="h3">
+                                @item.Name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="h4">
+                                @item.singType.Name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="h6">
+                                <b>زمان انتشار:</b> @item.SharedTime
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <table>
+                        <tr>
+                            <td>
+                                <a class="btn btn-warning" asp-page="/Sing/AddVersText" asp-route-SingId="@(item.Id)">
+                                    اضافه کردن متن
+                                </a>
+
+                            </td>
+                            <td>
+                                @if (item.SuportId == 0)
+                                {
+                                    <a class="btn btn-success" asp-page="/Sing/Suport/AddSuportForm" asp-route-SingId="@item.Id">
+                                        اضافه کردن فرم پشتیبانی
+                                    </a>
+                                }
+
+                                else
+                                {
+                                    <a class="btn btn-info" asp-page="/Sing/Suport/SuportFormInfo" asp-route-SuportId="@item.SuportId"
+                           asp-route-SingId="@item.Id">
+                                        وضعیت فرم پشتیبانی
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="btn btn-secondary" asp-page="/Sing/EditSing" asp-route-Id="@item.Id">
+                                    ویرایش
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" asp-page="/Sing/DeletSing" asp-route-Id="@item.Id">
+                                    حذف
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <a class="btn btn-primary" href="/Sing/Singer/AddSingerAccount">
+            اضافه کردن حساب خوانندگی
+        </a>
+    }
+</body>

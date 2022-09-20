@@ -1,0 +1,20 @@
+﻿body {
+    
+}
+#divForm{
+    margin-top: 2rem;
+    margin-right: 25%;
+    margin-left: 0 auto;
+}
+#LevelOfSubname {
+    margin-top: 2rem;
+}
+
+#lvl1 {
+    background-color: aliceblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#lvl3 p {
+        padding: 25%;
+}

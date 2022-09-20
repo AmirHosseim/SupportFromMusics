@@ -1,0 +1,93 @@
+﻿/*Shekari*/
+@font-face {
+    font-family: Shekari;
+    font-style: normal;
+    src: url("fonts/shekari/shekari.eot");
+    src: url("fonts/shekari/shekari.ttf") format("ttf"), url("/fonts/shekari/Shekari.woff") format("woff"), url("/fonts/shekari/Shekari.woff2") format("woff2");
+}
+/*Lalezar*/
+@font-face {
+    font-family: Lalezar;
+    font-style: normal;
+    src: url("/fonts/Lalezar/Lalezar.eot");
+    src: url("/fonts/Lalezar/Lalezar Font.ttf") format("ttf"), url("/fonts/Lalezar/Lalezar Font.woff") format("woff"), url("/fonts/Lalezar/Lalezar Font.woff2") format("woff2")
+}
+/*Neirizi*/
+@font-face {
+    font-family: Neirizi;
+    font-style: normal;
+    src: url("/fonts/Neirizi/Neirizi.eot");
+    src: url("/fonts/Neirizi/Neirizi.ttf") format("ttf"), url("/fonts/Neirizi/Neirizi.woff") format("woff"), url("/fonts/Neirizi/Neirizi.woff2") format("woff2");
+}
+
+form {
+    margin: 0 auto;
+}
+
+#divForm {
+    margin: 20px auto;
+    border: 2px solid blue;
+    width: 500px;
+    height: 450px;
+    background-color: rgb(0 0 0 / 0.02);
+    box-shadow: -2px 2px 4px rgb(0 0 0 / 0.50);
+}
+
+#Bigest {
+    position: center;
+    background-color: rgb(253, 253, 253);
+    margin: 3% 3%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px;
+}
+
+#formTable {
+    width: 100%;
+}
+
+#LevelOfSubname {
+    margin-top: 2rem;
+}
+
+#lvl3 {
+    background-color: aliceblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+    #lvl3 p {
+        padding: 25%;
+    }
+
+input {
+    width: 98%;
+    height: 40px;
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+
+    input:hover {
+        border: 0.5px solid black;
+        transition-duration: 0.8s;
+        transition-timing-function: ease;
+    }
+
+td {
+    padding: 2%;
+}
+
+h4 {
+    padding: 2%;
+    color: red;
+}
+
+.passwordInput {
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+}
+
+#divSubmit {
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+    margin-right: 2%;
+}

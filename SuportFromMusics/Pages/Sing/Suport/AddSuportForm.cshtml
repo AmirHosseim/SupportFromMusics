@@ -1,0 +1,46 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.Suport.AddSuportFormModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/Suport/AddSuportForm.css" />
+</head>
+<body align="center">
+    <div align="center">
+        <div dir="rtl" id="Text-Card">
+            <ul>
+                <li>
+                    با ثبت فرم پشتیبانی افراد می توانند از موسیقی شما همایت مالی کنند
+                </li>
+                <hr />
+                <li>
+                    هر موقع می توانید سقف همایت مالی را بیشتر کنید
+                </li>
+                <hr />
+                <li>
+                    بیشترین مقدار 100 میلیون می توانید در نظر بگیرید
+                </li>
+            </ul>
+        </div>
+        <h5>@ViewBag.error</h5>
+        <form method="post" align="center">
+            <input value="@Model.Sing.Id" type="hidden" asp-for="@Model.Sing.Id" />
+            <input vvalue="@Model.Sing.SingerId" type="hidden" asp-for="@Model.Sing.SingerId"/>
+            <div id="Maxvalue-Card" align="center">
+                @foreach (var item in Model.maxValues)
+                {
+                        <input id="MaxValueCheckBox" type="radio" class="btn btn-warning"
+                           value="@item.Maxvalue" name="SelectedMaxValue" />@item.Maxvalue   
+                }
+            </div>
+            <br />
+            <div>
+                <input type="submit" value="ثبت فرم" class="btn btn-success"/>
+            </div>
+        </form>
+        <br />
+    </div>
+</body>
+<script src="~/js/Suport/AddSuportForm.js"></script>

@@ -1,0 +1,26 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.EditSingModel
+@{
+}
+<head>
+
+</head>
+<body>
+    <div align="center">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" value="@Model.Sing.Id" />
+            <input type="hidden" value="@Model.Sing.Name" />
+            <p class="h4 text-warning">در صورت خالی گذاشتن المان ها مقدار های قبلی لخاظ خواهد شد</p>
+            <div id="Inputcard" class="col-lg-6 col-md-8 col-sm-10 col-xs-12" style="margin: 2cm;">
+                <label>نام ترک</label>
+                <input type="text" class="form-control" value="@Model.Sing.Name" asp-for="@Model.editSing.Name" />
+            </div>
+            <p class="h6 text-danger">در فرمت فایل دقت نمایید</p>
+            <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                <label>آواتار موسیقی با فرمت (jpg)</label>
+                <input asp-for="@Model.editSing.Avatar" type="file" class="form-control" />
+            </div>
+            <input type="submit" value="تمام" class="btn btn-success" />
+        </form>
+    </div>
+</body>

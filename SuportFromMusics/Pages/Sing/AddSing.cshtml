@@ -1,0 +1,49 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.AddSingModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <title>اضافه کردن موسیقی</title>
+</head>
+<body>
+    @if (Model.Singer == null)
+    {
+        <h1 class="txt txt-danger">
+            @ViewBag.Error
+        </h1>
+    }
+    else
+    {
+        <div class="col-md-12 col-sm-12 " align="center">
+            <form method="post" enctype="multipart/form-data">
+                <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
+                    <lable>نام موسیقی</lable>
+                    <input asp-for="@Model.singvm.Name" type="text" class="form-controll" />
+                    <span asp-validation-for="@Model.singvm.Name"></span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
+                    <label>آواتار موسیقی با فرمت (jpg)</label>
+                    <input asp-for="@Model.singvm.Avatar" type="file" class="form-controll" />
+                    <span asp-validation-for="@Model.singvm.Avatar"></span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
+                    <lable>فایل موسیقی با فرمت (mp3)</lable>
+                    <input asp-for="@Model.singvm.Audio" type="file" class="form-control" />
+                    <span asp-validation-for="@Model.singvm.Audio"></span>
+                </div>
+                <div>
+                    <select>
+                        @foreach (var item in Model.SingTypes)
+                        {
+                            <input type="radio" value="@item.Id" name="SelectType" />
+                            @item.Name
+                        }
+                    </select>
+                </div>
+                <input type="submit" value="ثبت ترک" class="btn btn-success" />
+            </form>
+        </div>
+    }
+</body>

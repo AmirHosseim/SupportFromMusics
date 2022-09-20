@@ -1,0 +1,53 @@
+﻿@page
+@model SuportFromMusics.Pages.Sing.Suport.SuportFormInfoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        #SuportFormDetail-Card{
+            display: inline-block;
+
+        }
+        #suportedUsersDetail-Card{
+            display:inline-block;
+        }
+    </style>
+</head>
+<body class="row">
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="display:inline-block;" id="SuportFormDetail-Card">
+        <h3>
+            @Model.SuportForm.SuportValue
+        </h3>
+        <h4>
+            @Model.SuportForm.Suportedvalue
+        </h4>
+        <a asp-page="EditSuportForm" asp-route-Id="@Model.SuportForm.Id" class="btn btn-warning">
+            ویرایش قرم پشتیبانی
+        </a>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="display:inline-blockl;" id="suportedUsersDetail-Card">
+        @if (Model.SuportForm.SuportedUsers.Count() != 0)
+        {
+            <h3>افرادی که از این ترک همایت کردند</h3>
+            @foreach (var item in Model.SuportForm.SuportedUsers)
+            {
+                <div>
+                    <p style="font-size:20px">
+                        @item.User.UserName
+                    </p>
+                    <p>
+                        @item.SuportedValue
+                    </p>
+                </div>
+            }
+        }
+        else
+        {
+            <h4 class="text text-danger">
+                @ViewBag.ErrorMessage
+            </h4>
+        }
+    </div>
+
+</body>

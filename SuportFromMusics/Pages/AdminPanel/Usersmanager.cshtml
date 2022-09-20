@@ -1,0 +1,88 @@
+﻿@page
+@using System.Security.Claims
+@model SuportFromMusics.Pages.AdminPanel.UsersmanagerModel
+@{
+}
+<head>
+
+</head>
+<body>
+
+    @if (Model.showUsers.users.Count() != 0)
+    {
+        @foreach (var item in Model.showUsers.users)
+        {
+            <div class="card">
+                <div class="card-header">
+                    @item.UserName
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Email</h5>
+                    @{
+                        string pass = "";
+                        for (int i = 0; i < item.Password.Length; i++)
+                        {
+                            pass += (char)(item.Password[i] - (item.Password.Length) + i);
+                        }
+
+                        item.Password = pass;
+                    }
+                    <p class="card-text">@item.Password</p>
+                    @if (item.IsAdmin == true)
+                    {
+                        <p>ادمین</p>
+                    }
+                    else
+                    {
+                        <p>کاربر عادی</p>
+                    }
+                    @if (item.Id != int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)))
+                    {
+                        <a asp-page="DeletUser" asp-route-Id="@item.Id" class="btn btn-primary">حذف کاربر</a>
+                        @if(item.IsAdmin == false)
+                        {
+                            <a class="btn btn-warning" asp-page="ChangeActivityType" asp-route-Id="@item.Id">
+                                ادمین کردن
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-danger" asp-page="ChangeActivityType" asp-route-Id="@item.Id">
+                                حذف از لیست ادمین ها 
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+        }
+    }
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        @if (Model.showUsers.CurrentPage > 1)
+        {
+            <a class="btn btn-primary" href="/AdminPanel/Usersmanager?PageId=@(Model.showUsers.CurrentPage - 1)">
+                قبلی
+            </a>
+            <a class="btn btn-primary" href="/AdminPanel/Usersmanager?PageId=1">
+                اولین صفحه
+            </a>
+        }
+        @for (int i = 1; i <= Model.showUsers.PageCount; i++)
+        {
+
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <a class="btn btn-primary @((i==Model.showUsers.CurrentPage) ? "active" : "")" href="/AdminPanel/Usersmanager?PageId=@i">
+                    @i
+                </a>
+            </div>
+        }
+        @if (Model.showUsers.CurrentPage < Model.showUsers.PageCount)
+        {
+            <a class="btn btn-primary" href="/AdminPanel/Usersmanager?PageId=@(Model.showUsers.CurrentPage + 1)">
+                بعدی
+            </a>
+            <a class="btn btn-primary" href="/AdminPanel/Usersmanager?PageId=@Model.showUsers.PageCount">
+                آخرین صفحه
+            </a>
+        }
+    </div>
+</body>
