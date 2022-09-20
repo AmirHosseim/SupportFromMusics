@@ -27,6 +27,9 @@
                     <h5 class="card-title">@item.coment</h5>
                     <p class="card-text">@item.sendTime.Year/@item.sendTime.Month/@item.sendTime.Day در @item.sendTime.Hour:@item.sendTime.Minute</p>
                 </div>
+                <a asp-page="DeletComent" asp-route-Id="@item.Id" class="btn btn-danger">
+                    حذف
+                </a>
             </div>
         </div>
     }

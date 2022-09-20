@@ -4,6 +4,9 @@ namespace SingServices
 {
     public class Coment
     {
+        [Key]
+        public long Id { get; set; }
+
         public long SingDetailId { get; set; }
 
         public long UserId { get; set; }

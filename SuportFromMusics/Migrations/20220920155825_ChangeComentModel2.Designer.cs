@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SuportFromMusics.Data;
 
@@ -11,9 +12,10 @@ using SuportFromMusics.Data;
 namespace SuportFromMusics.Migrations
 {
     [DbContext(typeof(SuportContext))]
-    partial class SuportContextModelSnapshot : ModelSnapshot
+    [Migration("20220920155825_ChangeComentModel2")]
+    partial class ChangeComentModel2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -40,7 +40,7 @@ namespace SuportFromMusics.Data
             modelBuilder.Entity<SongVersies>().HasKey(k => new { k.Id });
             modelBuilder.Entity<SuportedUsers>().HasKey(k => new { k.UserId, k.SuportFormId });
             modelBuilder.Entity<SaveSing>().HasKey(k => new { k.SingDetailId, k.UserId });
-            modelBuilder.Entity<Coment>().HasKey(k => new { k.UserId, k.SingDetailId });
+            modelBuilder.Entity<Coment>().HasKey(k => new { k.Id });
 
             base.OnModelCreating(modelBuilder);
         }
